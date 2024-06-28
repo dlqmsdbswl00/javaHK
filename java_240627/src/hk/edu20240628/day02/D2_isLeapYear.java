@@ -12,8 +12,38 @@ public class D2_isLeapYear {
 		int year = 2024;
 
 		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-			System.out.println("윤년입니다");
+			System.out.println(year + "년은 윤년입니다");
 		} else
-			System.out.println("윤년이 아닙니다");
+			System.out.println(year + "년은 평년입니다");
+
+		// 2001~2030년 사이 윤년 출력
+		// 메서드 이용 X
+		System.out.println("메서드 X =========================================");
+		for (int y = 2001; y <= 2030; y++) {
+			if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+				System.out.println(y + "년은 윤년입니다");
+			} else {
+				System.out.println(y + "년은 평년입니다");
+			}
+
+		}
+
+		// 메서드 이용
+		System.out.println("메서드 O =========================================");
+		for (int y = 2001; y <= 2030; y++) {
+			if (isLeapYear(y)) {
+				System.out.println(y + "년은 윤년입니다");
+			} else {
+				System.out.println(y + "년은 평년입니다");
+			}
+
+		}
+
 	}
+
+	// 윤년을 판단하는 메서드 : T/F 반환
+	private static boolean isLeapYear(int y) {
+		return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+	}
+
 }
