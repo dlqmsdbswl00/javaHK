@@ -16,7 +16,5 @@ public class D1_VariableTest {
 		double d=15.8;
 		float f=(float)12.7f;
 		float ff=(float)(d+f);	//다른 타입의 두 변수를 연산하면 큰 쪽의 타입으로 반환
-	
-	
 	}
 }
