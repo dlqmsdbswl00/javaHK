@@ -28,7 +28,20 @@ public class D1_ControlFlow {
 			System.out.println("실행결과 : " + num1 + "<" + num2);
 		}
 
-		// switch case문 : 대상값이 정수형, string
+		// 여러 조건을 설정한다면..
+		if (num1 > num2) {
+			if (num1 != num2) {// 조건문을 중첩해서 사용...
+
+			}
+		} else if (num1 < num2) {
+
+		} else if (num1 == num2) {
+
+		} else {
+
+		}
+
+		// switch case문: 대상값이 정수형, String
 		int num = 10;
 		switch (num) {
 		case 1:
@@ -46,9 +59,8 @@ public class D1_ControlFlow {
 		case 20:
 			System.out.println("20입니다.");
 			break;
-
 		default:
-			System.out.println("일치하는값이 없습니다");
+			System.out.println("일치하는 값이 없습니다.");
 			break;
 		}
 
@@ -62,54 +74,43 @@ public class D1_ControlFlow {
 			System.out.println(i);
 		}
 
+		// 제어문(반복문)
+		// for문 : 기본형식(index기반의 실행), 향상된 for문
+		// 1.초기값 선언 2. 조건확인 3.코드실행 4. 스텝증가 --> 2.조건확인....
+		for (int i = 0; i < 10; i++) {
+			// 실행코드
+			if (i == 3) {
+//						break;//가장 가까운 반복문을 빠져나온다.
+				continue;// 가장 가까운 반복문으로 돌아간다.
+			}
+			System.out.println(i);
+		}
+
 		// 향상된 for문
-		// 배열 : 어떤 값의 나열 -> 자바에서는 같은 타입만 나열
+		// 배열: 어떤 값의 나열 --> 자바에서는 같은 타입의 나열
+		int[] i = { 1, 2, 3, 4, 5 };
+		// (초기값:사용될 객체)
+		for (int j : i) {
+			System.out.println(j);// 자동으로 index에 해당하는 값을 가져온다.
+		}
+		for (int j = 0; j < i.length; j++) {
+			System.out.println(i[j]);// index를 통해 값을 가져온다.
+		}
 
-		// while문 : 반드시 반복문을 바져나가는 코드 처리 필요
-
-		// 2~9단 출력
-		for (int i = 2; i <= 9; i++) {
-			for (int j = 1; j <= 9; j++) {
-				System.out.printf("%d X %d = %d\n", i, j, (i * j));
+		// while문: 반드시 반복문을 빠져나가는 코드 처리가 필요
+		int w = 0;
+		while (true) {
+			System.out.println("while문 실행");
+			if (w > 5) {
+				break;
 			}
-			System.out.println("\n");
+			w++;
 		}
 
-		// 2~9단 짝수단 출력
-		for (int i = 2; i <= 9; i++) {
-			if (i % 2 == 0) {
-				System.out.println("\n");
-				for (int j = 1; j <= 9; j++) {
-					System.out.printf("%d X %d = %d\n", i, j, (i * j));
-				}
-			}
-		}
-
-		// 2~9단 홀수단 출력
-		for (int i = 2; i <= 9; i++) {
-			if (i % 2 != 0) {
-				System.out.println("\n");
-				for (int j = 1; j <= 9; j++) {
-					System.out.printf("%d X %d = %d\n", i, j, (i * j));
-				}
-			}
-		}
-
-		// 1~100까지 총합 출력
-		int sum = 0;
-		for (int i = 1; i <= 100; i++) {
-			sum += i;
-		}
-		System.out.printf("1~100까지 총합 : %d\n", sum);
-
-		// 1~100까지 3의 배수 총합 출력
-		int sum3 = 0;
-		for (int i = 1; i <= 100; i++) {
-			if (i % 3 == 0) {
-				sum3 += i;
-			}
-		}
-		System.out.printf("1~100까지 3의 배수 총합 : %d\n", sum3);
+		// do ~ while문 : 최초 한번은 코드 실행
+		do {
+			System.out.println("조건에 맞지 않아도 한번은 실행한다.");
+		} while (10 < 5);
 	}
 
 }
